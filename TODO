@@ -1,0 +1,4 @@
+- Mark full-day events as such.
+- If timerange > 24h, mark event as full-day ?
+- Add timezone information? Times currently shown as GMT. This works
+  well in iCal, but details CMD-I show GMT time -- confusing.
