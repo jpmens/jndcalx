@@ -1,0 +1,6 @@
+#define ICALENDAR [iCalendar](http://www.ietf.org/rfc/rfc2445.txt)
+#define iCal _iCal_
+#define SUNBIRD [Sunbird](http://www.mozilla.org/projects/calendar/sunbird/)
+#define JX _jndcalx_
+
+#define fig(nr,file, caption) ![caption](file) __NEWLINE__ Figure nr caption
