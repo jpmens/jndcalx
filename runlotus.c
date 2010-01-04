@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 
-	if (setuid(UNIXIOD) == -1) {
+	if (setuid(UNIXUID) == -1) {
 		perror("setuid");
 		exit(1);
 	}

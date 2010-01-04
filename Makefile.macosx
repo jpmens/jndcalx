@@ -1,5 +1,6 @@
-        
 TARGET = jndcalx
+
+all: $(TARGET) runlotus
         
 SOURCES = $(TARGET).c
 OBJECTS = $(TARGET).o
@@ -18,7 +19,11 @@ $(TARGET):$(OBJECTS)
 # the object files depend on the corresponding source files.
 .c.o:
 	$(CC) $(CCOPTS) $(DEFINES) -I$(INCDIR) $(SOURCES)
-        
+
+runlotus: runlotus.c
+	$(CC) $(CFLAGS) -o runlotus runlotus.c
+	sudo chown root runlotus
+	sudo chmod 4111 runlotus
 
 push:
 	git push origin master
