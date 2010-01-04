@@ -6,7 +6,7 @@
  *	 _/ |_| |_|\__,_|\___\__,_|_/_/\_(_)___|
  *	|__/                                    
  *
- * jndcalx (C)2009 by Jan-Piet Mens
+ * jndcalx (C)2009/2010 by Jan-Piet Mens
  */
 
 #include "jndcalx.h"
@@ -18,7 +18,7 @@ char *progname;
 
 static void usage()
 {
-	fprintf(stderr, "Usage: %s [-h] dbname\n",
+	fprintf(stderr, "Usage: %s [-h] [-o output]  dbname\n",
 		progname);
 	exit(EX_USAGE);
 }
@@ -36,10 +36,18 @@ int main(int argc, char **argv)
 	
 	progname = *argv;
 
-	while ((c = getopt(argc, argv, "-h")) != EOF) {
+	fpout = stdout;
+
+	while ((c = getopt(argc, argv, "-ho:")) != EOF) {
 		switch (c) {
 			case 'h':
 				usage();
+				break;
+			case 'o':
+				if ((fpout = fopen(optarg, "w")) == NULL) {
+					perror(optarg);
+					exit(2);
+				}
 				break;
 			default:
 				usage();
@@ -61,7 +69,6 @@ int main(int argc, char **argv)
                 return (1);
         }
 
-	fpout = stdout;
 
 	if (error = NSFDbOpen (dbname, &dbh)) {
 		return(notes_error(error, "Can't open database"));
