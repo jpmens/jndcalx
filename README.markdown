@@ -6,7 +6,36 @@ for creating this.
 
 Snippets of documentation are in the doc/ directory.
 
-You'll need to do the following:
+You'll need to do the following to build `jndcalx` on Mac OS X:
+
+- Edit `env.mac` and set the `LOTUS` environment variable to the
+  directory containing your `notesapi` directory.
+
+		export LOTUS="/Users/jpm/Zz"
+		export Notes_ExecDirectory="/Applications/Notes.app/Contents/MacOS"
+		export DYLD_LIBRARY_PATH=${Notes_ExecDirectory}
+
+- Source `env.mac`
+
+		source env.mac
+
+- Make the binary
+
+		make -f Makefile.macosx jndcalx
+
+- Test `jndcalx` by giving it the name of a local (or remote) database.
+  Ensure your copy of Lotus Notes is running or you'll be prompted for a
+  password.
+
+		./jndcalx jpm.nsf > test.ics
+		Notes: Can't open database: err=0x103 [File does not exist]
+		./jndcalx mail/jpm.nsf > test.ics
+
+- The resulting file `test.ics` contains your calendar.
+
+If, and only if, the above was successful, you can continue with the next steps.
+
+You'll need to do the following to run `jndcalx` on Mac OS X via a CGI wrapper:
 
 - Edit `runlotus.c` and change the value of `DIR` to reflect the
   directory in which you're installing the executable `jndcalx`. Further
