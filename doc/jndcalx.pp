@@ -139,7 +139,8 @@ Yes, that is, unfortunately necessary. Here are the reasons:
   bit is that when `jndcalx` runs, it runs with the effective userid
   of _you_. (To determine your effective user id, open Terminal and
   type
-  		$ id
+
+		$ id
 		uid=501(you) gid=20(staff) ....
 
 ### Command line

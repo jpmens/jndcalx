@@ -31,7 +31,7 @@ You'll need to do the following to build `jndcalx` on Mac OS X:
 		Notes: Can't open database: err=0x103 [File does not exist]
 		./jndcalx mail/jpm.nsf > test.ics
 
-- The resulting file `test.ics` contains your calendar.
+- The resulting file `test.ics` contains your calendar. 
 
 If, and only if, the above was successful, you can continue with the next steps.
 
