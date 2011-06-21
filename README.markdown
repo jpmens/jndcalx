@@ -1,7 +1,7 @@
 This is jndcalx, a program which exports Lotus Notes calendar entries in
 iCalendar format. It works for me and it might work for you. I've
 [written a bit about my
-motivation](http://blog.fupps.com/2009/10/23/get-icalsunbird-to-subscribe-to-your-lotus-notes-calendar/)
+motivation](http://jpmens.net/2009/10/23/get-icalsunbird-to-subscribe-to-your-lotus-notes-calendar/)
 for creating this.
 
 Snippets of documentation are in the doc/ directory.
